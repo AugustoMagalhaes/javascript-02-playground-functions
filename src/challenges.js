@@ -1,11 +1,6 @@
 // Desafio 1
 function compareTrue(firstBoolean, secondBoolean) {
   return (firstBoolean === true && secondBoolean === true);
-  /* if (firstBoolean === true && secondBoolean === true) {
-    return ? true : false;
-  } else {
-    return false;
-  } */
 }
 
 // Desafio 2
@@ -19,8 +14,9 @@ function splitSentence(originalString) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(stringsArray) {
+  let lastElement = stringsArray.length - 1;
+  return stringsArray[lastElement].concat(', ').concat(stringsArray[0]);
 }
 
 // Desafio 5
