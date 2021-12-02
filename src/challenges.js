@@ -20,8 +20,8 @@ function concatName(stringsArray) {
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, draws) {
+  return (wins * 3) + (draws * 1);
 }
 
 // Desafio 6
