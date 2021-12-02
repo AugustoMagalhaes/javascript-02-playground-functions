@@ -25,13 +25,24 @@ function footballPoints(wins, draws) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numbersArray) {
+  let sortedArray = numbersArray.sort(function (a, b) {
+    return a - b;
+  });
+  let lastElement = sortedArray[sortedArray.length - 1];
+  return (sortedArray.lastIndexOf(lastElement) - sortedArray.indexOf(lastElement)) + 1;
+  /* retorna a diferença, em uma array ordenada crescentemente, entre a última posiçao do maior número e a primeira posição do mesmo adicionando-se "1", uma vez
+  que a diferença calcula a distância entre os dois e não contabiliza a primeira ocorrência. */
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let distCat1 = Math.abs(cat1 - mouse);
+  let distCat2 = Math.abs(cat2 - mouse);
+  if (distCat1 === distCat2) {
+    return 'os gatos trombam e o rato foge';
+  }
+  return (distCat1 < distCat2) ? 'cat1' : 'cat2';
 }
 
 // Desafio 8
