@@ -20,8 +20,11 @@ function generatePhoneNumber() {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  function isTriangle(a, b, c) {
+    return ((a < b + c) && a > Math.abs(b - c));
+  }
+  return (isTriangle(lineA, lineB, lineC) && isTriangle(lineB, lineA, lineC) && isTriangle(lineC, lineB, lineA));
 }
 
 // Desafio 13
