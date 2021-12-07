@@ -1,5 +1,5 @@
 // Desafio 10
-function techList(arrayTech, incumbentsname) {
+function techList(arrayTech, incumbentsName) {
   if (arrayTech.length === 0) {
     return 'Vazio!';
   }
@@ -8,7 +8,7 @@ function techList(arrayTech, incumbentsname) {
   });
   let techListName = [];
   for (let i = 0; i < sortedArray.length; i += 1) {
-    let ithElement = { tech: sortedArray[i], name: incumbentsname };
+    let ithElement = { tech: sortedArray[i], name: incumbentsName };
     techListName.push(ithElement);
   }
   return techListName;
