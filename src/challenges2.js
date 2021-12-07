@@ -14,17 +14,61 @@ function techList(arrayTech, incumbentsName) {
   return techListName;
 }
 
+function checkThreeRepetition(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    let count = 0;
+    for (let j = 0; j < array.length; j += 1) {
+      if (array[i] === array[j]) {
+        count += 1;
+      }
+      if (count >= 3) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function checkNumberAlgarism(array) {
+  for (let element of array) {
+    if (element < 0 || element > 9) {
+      return false;
+    }
+  }
+  return true;
+}
+
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(numbersArray) {
+  if (numbersArray.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+  if (
+    checkNumberAlgarism(numbersArray) === true && checkThreeRepetition(numbersArray) === true) {
+    let ddd = `(${numbersArray[0]}${numbersArray[1]}) `;
+    let phoneNumber = ddd;
+    for (let i = 2; i < numbersArray.length; i += 1) {
+      if (i === 6) {
+        phoneNumber += numbersArray[i].toString() + '-';
+      } else {
+        phoneNumber += numbersArray[i].toString();
+      }
+    }
+    return phoneNumber;
+  }
+  return 'não é possível gerar um número de telefone com esses valores';
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
   function isTriangle(a, b, c) {
-    return ((a < b + c) && a > Math.abs(b - c));
+    return a < b + c && a > Math.abs(b - c);
   }
-  return (isTriangle(lineA, lineB, lineC) && isTriangle(lineB, lineA, lineC) && isTriangle(lineC, lineB, lineA));
+  return (
+    isTriangle(lineA, lineB, lineC) &&
+    isTriangle(lineB, lineA, lineC) &&
+    isTriangle(lineC, lineB, lineA)
+  );
 }
 
 // Desafio 13
@@ -36,7 +80,9 @@ function hydrate(amountOfDrinks) {
       numberOfHydrates += parseInt(splitedAmountOfDrinks[i], 10);
     }
   }
-  return (numberOfHydrates === 1) ? `${numberOfHydrates} copo de água` : `${numberOfHydrates} copos de água`;
+  return numberOfHydrates === 1
+    ? `${numberOfHydrates} copo de água`
+    : `${numberOfHydrates} copos de água`;
 }
 
 module.exports = {
