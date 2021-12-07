@@ -84,7 +84,6 @@ function decode(phrase2) {
     if (charArray2[number]) {
       splitedPhrase2[i] = charArray2[number];
     }
-    console.log('arr: ', charArray2[number]);
   }
   let joinedPhrase2 = splitedPhrase2.join('');
   return joinedPhrase2;
